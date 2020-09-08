@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ept-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadatro</title>
+    <style>
+        body{
+            background-color: #0000ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        body input{
+            width: 10rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <p>Digite o seu país de origem</p>
+    <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Inserir" onclick="inserir()">
+    <div id="dado"></div>
+    
+    <script>
+       function inserir(){
+           var pais = window.document.querySelector('input#txtpais');
+           var cdt = window.document.querySelector('div#dado');
+           var p = pais.value;
+
+           if(p == "brasil" || p == "Brasil" || p == "BRASIL"){
+               cdt.innerHTML = `Pais <strong>${p}</strong>. Você se declara brasileiro`;
+           }else if(p == ""){
+               cdt.innerHTML = "Por favor, digite o seu país de origem!"
+           }else{
+               cdt.innerHTML = `Pais <strong>${p}</strong>. Você se declara estrangeiro`;
+           }
+       }
+
+    </script>
+</body>
+</html>
